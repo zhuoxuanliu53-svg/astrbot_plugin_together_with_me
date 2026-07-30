@@ -1,0 +1,15 @@
+name: astrbot_plugin_together_with_me
+display_name: together with me
+short_desc: 在群聊中创建、检索和报名游戏联机条目。
+desc: |
+  together with me 是一个面向群聊的轻量联机信息插件。
+  群友可以创建含好友码、游戏 ID、房间码或服务器地址的条目，
+  其他成员按游戏或备注搜索后报名。短期条目会自动删除，长期条目会持续保存。
+version: 0.1.0
+author: LiuJuan
+repo: https://github.com/zhuoxuanliu53-svg/astrbot_plugin_together_with_me
+astrbot_version: ">=4.17,<5"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+  - qq_official_webhook
