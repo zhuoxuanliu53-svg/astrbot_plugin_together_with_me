@@ -35,6 +35,9 @@ async def test_group_scoped_create_search_join_and_delete(tmp_path: Path):
         await store.join_entry("group-a", "TW0001", "another-member")
     assert await store.delete_entry("group-a", "TW0001", "owner")
     assert await store.find_entries("group-a", "") == []
+    async with aiosqlite.connect(store.database_path) as db:
+        signup_count = await db.execute_fetchall("SELECT COUNT(*) FROM signups")
+    assert signup_count[0][0] == 0
 
 
 @pytest.mark.asyncio

@@ -237,6 +237,7 @@ class TogetherStore:
 
     async def delete_entry(self, group_id: str, code: str, owner_id: str) -> bool:
         async with self._connect() as db:
+            await db.execute("PRAGMA foreign_keys = ON")
             cursor = await db.execute(
                 "DELETE FROM entries WHERE group_id = ? AND code = ? AND owner_id = ?",
                 (group_id, _normalize_code(code), owner_id),
