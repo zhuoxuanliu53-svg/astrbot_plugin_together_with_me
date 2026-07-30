@@ -44,7 +44,7 @@ def test_create_rejects_invalid_input(payload, error):
 
 
 def test_search_groups_are_and_with_or_alternatives():
-    assert parse_search_query("绝地潜兵2｜东线/南线/样本") == [
+    assert parse_search_query("绝地潜兵2｜东线／南线/样本") == [
         ["绝地潜兵2"],
         ["东线", "南线", "样本"],
     ]

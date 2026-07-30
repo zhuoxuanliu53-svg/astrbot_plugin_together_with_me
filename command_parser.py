@@ -61,7 +61,9 @@ def parse_search_query(query: str) -> list[list[str]]:
     for block in _canonical_separators(query).split("｜"):
         if not block.strip():
             continue
-        alternatives = [normalize_search_text(term) for term in block.split("/")]
+        alternatives = [
+            normalize_search_text(term) for term in block.replace("／", "/").split("/")
+        ]
         alternatives = [term for term in alternatives if term]
         if alternatives:
             groups.append(alternatives)
