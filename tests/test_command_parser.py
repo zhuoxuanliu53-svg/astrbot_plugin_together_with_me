@@ -18,7 +18,7 @@ def test_create_uses_required_fields_and_defaults():
 
 def test_create_accepts_named_fields_in_any_order():
     parsed = parse_create_payload(
-        "code|Steam｜长期｜上限：4｜备注=东线 样本｜初始=2",
+        "code|Steam｜长期｜上限：4｜备注＝东线 样本｜初始=2",
     )
     assert parsed["note"] == "东线 样本"
     assert parsed["initial_count"] == 2

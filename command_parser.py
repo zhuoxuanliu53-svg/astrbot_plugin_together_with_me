@@ -82,7 +82,7 @@ def _canonical_separators(value: str) -> str:
 
 
 def _split_named_field(part: str) -> tuple[str, str]:
-    for separator in ("=", "：", ":"):
+    for separator in ("=", "＝", "：", ":"):
         if separator in part:
             field, value = part.split(separator, 1)
             return field.strip(), value.strip()
